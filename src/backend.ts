@@ -132,6 +132,10 @@ app.post("/messages", function (req, res) {
   });
 });
 
+app.get("/hola", (req, res) => {
+  res.json("Hola");
+});
+
 app.listen(PORT, () => {
   console.log("App listening at http://localhost/" + PORT);
 });
