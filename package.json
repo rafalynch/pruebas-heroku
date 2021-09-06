@@ -1,0 +1,26 @@
+{
+  "name": "pruebas",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "firebase": "8.7.1",
+    "firebase-admin": "^9.11.1",
+    "lodash": "^4.17.21",
+    "nanoid": "^3.1.25",
+    "nodemon": "^2.0.12",
+    "parcel": "^2.0.0-rc.0",
+    "rand-token": "^1.0.1",
+    "typescript": "^4.4.2"
+  },
+  "scripts": {
+    "dev": "nodemon ./src/backend.ts localhost 2000",
+    "test": "",
+    "build": "tsc ./src/backend.ts",
+    "start": "node ./src/backend.js",
+    "serve": "parcel serve ./src/index.html"
+  }
+}
