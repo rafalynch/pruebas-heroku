@@ -7,7 +7,7 @@ var rtdb_1 = require("./rtdb");
 var nanoid = require("nanoid");
 var token = require("rand-token");
 var app = express();
-var PORT = "4000";
+var PORT = process.env.PORT || "4000";
 app.use(express.json());
 app.use(cors());
 var usersCollRef = db_1.firestore.collection("users");
@@ -125,6 +125,9 @@ app.post("/messages", function (req, res) {
     chatroomsRef.push(req.body.mensaje, function () {
         res.json({ Mensaje: "esto fue una prueba de push" });
     });
+});
+app.get("/hola", function (req, res) {
+    res.json("Hola");
 });
 app.listen(PORT, function () {
     console.log("App listening at http://localhost/" + PORT);

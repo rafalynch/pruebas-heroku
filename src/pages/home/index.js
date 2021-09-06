@@ -7,7 +7,7 @@ function initHome(param) {
     homeContainer.className = "home-container";
     // Titulo
     var titleContainer = document.createElement("div");
-    titleContainer.innerHTML = "\n    <div class=\"title\">Bienvenido</div>\n  ";
+    titleContainer.innerHTML = "\n    <div class=\"title\">Bienvenidos</div>\n  ";
     homeContainer.appendChild(titleContainer);
     // Input
     var textInput = document.createElement("form");

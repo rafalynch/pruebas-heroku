@@ -19,7 +19,7 @@ function initChat(param) {
     function renderMensajes() {
         var mensajes = state_1.state.getState().currentChat.messages;
         messagesContainer.innerHTML = "";
-        var arrayMensajes = map_1["default"](mensajes);
+        var arrayMensajes = (0, map_1["default"])(mensajes);
         arrayMensajes.forEach(function (element) {
             var unChat = document.createElement("div");
             unChat.classList.add("un-chat");
