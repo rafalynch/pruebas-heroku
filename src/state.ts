@@ -2,7 +2,7 @@ import { Router } from "express";
 import { initRouter } from "./router";
 import { rtdb } from "./rtdb";
 
-const API_BASE_URL = "http://localhost:4000";
+const API_BASE_URL = "https://dwf-m6-cap6.herokuapp.com";
 
 export type Message = {
   user: string;
@@ -50,7 +50,7 @@ export const state = {
   },
   setCurrentUser(email, nombre, room, token) {
     const currentState = this.getState();
-    fetch("http://localhost:4000/signup", {
+    fetch(API_BASE_URL + "/signup", {
       headers: {
         "content-type": "application/json",
       },
@@ -74,7 +74,7 @@ export const state = {
         });
       })
       .catch(() => {
-        fetch("http://localhost:4000/auth", {
+        fetch(API_BASE_URL + "/auth", {
           headers: {
             "content-type": "application/json",
           },
@@ -99,7 +99,7 @@ export const state = {
   },
   setNewRoom() {
     const userId = this.data.currentUser.id;
-    fetch("http://localhost:4000/rooms", {
+    fetch(API_BASE_URL + "/rooms", {
       headers: {
         "content-type": "application/json",
       },
@@ -117,7 +117,7 @@ export const state = {
     });
   },
   setExistingRoom(roomToken, userId) {
-    fetch("http://localhost:4000/rooms/" + roomToken + "?userId=" + userId, {
+    fetch(API_BASE_URL + "/rooms/" + roomToken + "?userId=" + userId, {
       headers: {
         "content-type": "application/json",
       },
@@ -140,7 +140,7 @@ export const state = {
   },
   pushMessage(message: string) {
     const nombre = this.data.currentUser.email;
-    fetch("http://localhost:4000/messages", {
+    fetch(API_BASE_URL + "/messages", {
       headers: {
         "content-type": "application/json",
       },
